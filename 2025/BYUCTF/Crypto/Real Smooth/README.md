@@ -1,11 +1,8 @@
 ## Real Smooth
-Author: overllama
-
-Challenge prompt:
-
-Just do the dance, that's the solve
-
-nc smooth.chal.cyberjousting.com 1350
+Author: overllama  
+Challenge prompt:  
+Just do the dance, that's the solve  
+nc smooth.chal.cyberjousting.com 1350  
 
 We are given a remote service that runs the following code:
 ```
@@ -29,24 +26,24 @@ if decrypted == b'Criss cross, criss cross':
 else:
     print("Those aren't the words!")
 ```
-We're expected to somehow send a ciphertext that decrypts to:
+We're expected to somehow send a ciphertext that decrypts to:  
 
-b"Criss cross, criss cross"
+b"Criss cross, criss cross"  
 
-But we are never given the key or nonce, and both are randomly generated per connection.
-This is a classic stream cipher setup using ChaCha20. Here's what matters:
--ChaCha20 generates a keystream from the (key, nonce) pair.
--It XORs the keystream with the plaintext to produce ciphertext.
--The server prints:
-    encrypt("Slide to the left") → 18 bytes
-    encrypt("Slide to the right") → 19 bytes
+But we are never given the key or nonce, and both are randomly generated per connection.  
+This is a classic stream cipher setup using ChaCha20. Here's what matters:  
+-ChaCha20 generates a keystream from the (key, nonce) pair.  
+-It XORs the keystream with the plaintext to produce ciphertext.  
+-The server prints:  
+    encrypt("Slide to the left") → 18 bytes  
+    encrypt("Slide to the right") → 19 bytes  
     
-That means we have 37 total ciphertext bytes.
-Since we know the corresponding plaintexts, we can recover 37 bytes of keystream.
+That means we have 37 total ciphertext bytes.  
+Since we know the corresponding plaintexts, we can recover 37 bytes of keystream.  
 
-After failing with partial inputs like:
-    b"Criss cross, criss " (only 18 bytes, matched ct1)
-    b"Criss cross, criss cr" (19 bytes, matched ct2)
+After failing with partial inputs like:  
+    b"Criss cross, criss " (only 18 bytes, matched ct1)  
+    b"Criss cross, criss cr" (19 bytes, matched ct2)  
 
 I realized that the ChaCha20 cipher object was reused, so the second .encrypt() call continues the keystream stream right after the first.
 Hence, ct1 + ct2 gives a continuous 37-byte stretch of keystream if we combine them.
