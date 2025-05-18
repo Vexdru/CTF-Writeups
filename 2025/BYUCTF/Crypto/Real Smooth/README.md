@@ -1,7 +1,10 @@
 ## Real Smooth
 Author: overllama
+
 Challenge prompt:
+
 Just do the dance, that's the solve
+
 nc smooth.chal.cyberjousting.com 1350
 
 We are given a remote service that runs the following code:
