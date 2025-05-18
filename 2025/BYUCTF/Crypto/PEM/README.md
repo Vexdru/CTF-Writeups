@@ -1,11 +1,8 @@
-## PEM
-
-Author: overllama
-
-Challenge Prompt:
-$flag ∈ \sqrt N$
-
-File Given: ssh_host_rsa_key.pub (PEM-format RSA public key)
+## PEM  
+Author: overllama  
+Challenge Prompt:  
+$flag ∈ \sqrt N$  
+File Given: ssh_host_rsa_key.pub (PEM-format RSA public key)  
 
 We're given a PEM-formatted RSA public key and a mathematical hint:
 
@@ -29,7 +26,7 @@ m = ⌊c ** (1/e)⌋
 
 However, no ciphertext is given. Instead, the challenge hint suggests: The flag itself is simply √N
 
-Exploit Steps
+# Exploit Steps  
 -Load the public RSA key from the provided PEM file  
 -Extract n (the modulus)  
 -Take the integer square root of n  
