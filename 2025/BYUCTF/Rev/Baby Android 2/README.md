@@ -2,7 +2,7 @@
 Author: overllama  
 Challenge prompt: If you've never reverse engineered an Android application, now is the time!! Get to it, already!! Learn more about how they work!!  
 
-TO begin with, we decompile the apk in decompiler.com   
+To begin with, we decompile the apk in decompiler.com   
 Following that, to look for challenge related clues, we navigate to sources/byuctf/babyandroid/FlagChecker.java  
 From there, we're given an APK that asks for a flag input and checks it using a native method:  
 ```
@@ -25,9 +25,8 @@ ls baby2_unpacked/lib/arm64-v8a/libbabyandroid.so
 -Run auto-analysis  
 -Look for the native JNI function:  
     Java_byuctf_babyandroid_FlagChecker_check  
-
-3. Analyze the Function
-Decompiled logic looked like:
+3. Analyze the Function  
+Decompiled logic looked like:  
 ```
   char *pcVar1;
   long lVar2;
