@@ -1,7 +1,10 @@
 Challenge name: PEM
+
 Author: overllama
+
 Challenge Prompt:
 $flag ∈ \sqrt N$
+
 File Given: ssh_host_rsa_key.pub (PEM-format RSA public key)
 
 We're given a PEM-formatted RSA public key and a mathematical hint:
