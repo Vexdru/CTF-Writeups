@@ -11,8 +11,8 @@ We're given a PEM-formatted RSA public key and a mathematical hint:
 
 $flag ∈ \sqrt N$
 
-This tells us that the flag (converted to an integer) is less than or equal to √N, where N is the RSA modulus. No ciphertext is provided — just the public key.
-We know that RSA encryption typically works like:
+This tells us that the flag (converted to an integer) is less than or equal to √N, where N is the RSA modulus. No ciphertext is provided — just the public key.  
+We know that RSA encryption typically works like:  
 
 ciphertext = m^e mod n
 
@@ -20,20 +20,20 @@ But if the plaintext m is small enough that:
 
 m^e < n
 
-Then:
--The mod n has no effect
--The ciphertext is just c = m^e
--And the decryption becomes:
+Then:  
+-The mod n has no effect  
+-The ciphertext is just c = m^e  
+-And the decryption becomes:  
 
 m = ⌊c ** (1/e)⌋
 
 However, no ciphertext is given. Instead, the challenge hint suggests: The flag itself is simply √N
 
 Exploit Steps
--Load the public RSA key from the provided PEM file
--Extract n (the modulus)
--Take the integer square root of n
--Convert the result back to bytes to get the flag
+-Load the public RSA key from the provided PEM file  
+-Extract n (the modulus)  
+-Take the integer square root of n  
+-Convert the result back to bytes to get the flag  
 
 Solution code
 ```
