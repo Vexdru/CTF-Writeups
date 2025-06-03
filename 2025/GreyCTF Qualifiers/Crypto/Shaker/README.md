@@ -43,11 +43,15 @@ For each output byte position (i.e. state[i]), collect a multiset S_i of all the
 Since the permutations shuffle the flag, each S_i eventually contains every flag byte, just XOR-ed with the fixed mask byte x[i].   
 
 2. Now eliminate the mask (up to a constant)   
-Suppose:  
+Suppose:
+$$
 S_0 = { b ^ x[0] | b in flag }  
-S_j = { b ^ x[j] | b in flag }  
-Then S_j = S_0 ^ (x[0] ^ x[j])  
-
+S_j = { b ^ x[j] | b in flag }
+$$
+Then
+$$
+S_j = S_0 ^ (x[0] ^ x[j])  
+$$
 So we brute-force x[0] ^ x[j] by finding which value aligns S_0 to S_j.  
 Now know the XOR mask x, up to the unknown byte x[0].  
 
