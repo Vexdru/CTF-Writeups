@@ -1,6 +1,6 @@
 ## Notsus.Exe  
 Author: TheMythologist  
-Challenge prompt: <Insert Guessy forensics challenge description here>  
+Challenge prompt: (Insert Guessy forensics challenge description here)
 
 Step 1: Cracking the ZIP Password with bkcrack  
 
