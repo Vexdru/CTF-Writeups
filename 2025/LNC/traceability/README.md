@@ -1,7 +1,7 @@
 ## traceability
 Author: Kairos  
-Challenge prompt: a picture speaks a thousand words, but what about metadata?
-Challenges are available at https://github.com/Lag-and-Crash/2025-public/tree/main/challenges/forensics
+Challenge prompt: a picture speaks a thousand words, but what about metadata?  
+Challenges are available at https://github.com/Lag-and-Crash/2025-public/tree/main/challenges/forensics  
 
 This was also another easy steganography challenge. To view metadata, I ran  
 `
