@@ -7,6 +7,5 @@ This is a very easy steganography challenge. I ran
 `  
 strings curse.png | grep "LNC"  
 `  
-
 which outputted the flag immediately.  
 Flag: LNC25{cUr53s_r3v3r53D}
